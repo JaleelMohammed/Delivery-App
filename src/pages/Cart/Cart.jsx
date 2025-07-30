@@ -42,18 +42,18 @@ const Cart = () => {
           <div>
           <div className="cart-total-details">
             <p>Subtotal</p>
-          <p>${getTotalCartAmount()}</p>
+          <p>₹{getTotalCartAmount()}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <p>Delivery Free</p>
-            <span className={getTotalCartAmount()>50?"free-delivery":"dlivery-charge"}>{getTotalCartAmount()>50?"Free":'Free Delivery above $50'}</span> 
-            <p>${getTotalCartAmount()>50?0:50}</p>
+            <span className={getTotalCartAmount()>99?"free-delivery":"dlivery-charge"}>{getTotalCartAmount()>99?"Free":'Free Delivery above ₹99'}</span> 
+            <p>₹{getTotalCartAmount()>99?0:39}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <b>Total</b>
-            <b>${getTotalCartAmount()>50?getTotalCartAmount()+0:getTotalCartAmount()+50}</b>
+            <b>₹{getTotalCartAmount()>99?getTotalCartAmount()+0:getTotalCartAmount()>0?getTotalCartAmount()+39:0}</b>
           </div>
           </div>
           <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
